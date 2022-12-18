@@ -11,7 +11,6 @@ class Venue(models.Model):
     description = models.TextField()
     image_url = models.ImageField(
         upload_to='venues', height_field=None, width_field=None)
-    soldOut = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

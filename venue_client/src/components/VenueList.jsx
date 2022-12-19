@@ -10,6 +10,7 @@ export default function VenueList () {
         const getVenues = async () => {
             const response = await axios.get('http://localhost:8000/venues/')
             console.log(response)
+            const response = await axios.get('http://localhost:8000/venues/')
             setVenues(response.data)
         }
         getVenues()
@@ -25,7 +26,6 @@ export default function VenueList () {
                 <div key={x.id}>
                     {x.name}
                 </div>
-
             ))}
         </div>
     )

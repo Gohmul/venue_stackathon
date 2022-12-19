@@ -10,7 +10,7 @@ class Venue(models.Model):
     state = models.CharField(max_length=100)
     description = models.TextField()
     image_url = models.ImageField(
-        upload_to='venues', height_field=None, width_field=None)
+        upload_to='venues', height_field=None, width_field=None, default="defaults/venueimage.jpeg")
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class Event(models.Model):
     date = models.DateTimeField(auto_now=False, auto_now_add=False)
     description = models.TextField()
     image_url = models.ImageField(
-        upload_to='events', height_field=None, width_field=None)
+        upload_to='events', height_field=None, width_field=None, default="defaults/eventimage.jpeg")
     soldOut = models.BooleanField(default=False)
 
     def __str__(self):

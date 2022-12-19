@@ -17,7 +17,7 @@ export default function VenueDetail ({venues}) {
         (!venueDetails) ?
         <h1>Error</h1> :
         <div>
-            <h1>Venue Detail</h1>
+            <h1>Venue Details</h1>
             
             <img src={venueDetails.image_url}></img>
             <h2>{venueDetails.name}</h2>

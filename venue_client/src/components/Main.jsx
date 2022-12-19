@@ -35,8 +35,8 @@ export default function Main () {
             <Routes>
                 <Route path="/venues" element={<VenueList venues={venues} setVenues={setVenues}/>}/>
                 <Route path="/events" element={<EventList events={events} setEvents={setEvents}/>}/>
-                <Route path="/venue/:id" element={<VenueDetail venues={venues}/>}/>
-                <Route path="/event/:id" element={<EventDetail/>}/>
+                <Route path="/venue/:id" element={<VenueDetail venues={venues} events={events}/>}/>
+                <Route path="/event/:id" element={<EventDetail events={events}/>}/>
             </Routes>
         </div>
     )

@@ -14,13 +14,14 @@ export default function VenueList () {
     },[])
 
     return (
+        (!venues) ?
+        <h1>error</h1> :
         <div>
             <h1>Venue List</h1>
             {venues.map((x) => (
                 <div key={x.id}>
                     {x.name}
                 </div>
-
             ))}
         </div>
     )

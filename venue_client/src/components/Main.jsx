@@ -15,13 +15,13 @@ export default function Main () {
     const getVenues = async () => {
         const response = await axios.get('http://localhost:8000/venues/')
         setVenues(response.data)
-        console.log(`venues ${venues}`)
+        // console.log(`venues ${venues}`)
     }
 
     const getEvents = async () => {
         const response = await axios.get('http://localhost:8000/events/')
         setEvents(response.data)
-        console.log(`venues ${events}`)
+        // console.log(`venues ${events}`)
     }
 
     useEffect(()=> {
@@ -34,7 +34,7 @@ export default function Main () {
             <Routes>
                 <Route path="/venues" element={<VenueList venues={venues} setVenues={setVenues}/>}/>
                 <Route path="/events" element={<EventList/>}/>
-                <Route path="/venue/:id" element={<VenueDetail/>}/>
+                <Route path="/venue/:id" element={<VenueDetail venues={venues}/>}/>
                 <Route path="/event/:id" element={<EventDetail/>}/>
             </Routes>
         </div>

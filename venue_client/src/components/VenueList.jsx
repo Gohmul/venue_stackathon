@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router'
 
 export default function VenueList ({venues, setVenues}) {
 
+    let navigate = useNavigate()
+
     // const [venues, setVenues] = useState([])
     // const getVenues = async () => {
     //     const response = await axios.get('http://localhost:8000/venues/')
@@ -14,6 +16,11 @@ export default function VenueList ({venues, setVenues}) {
     //     getVenues()
     // },[])
 
+
+    const goToVenue = (venId) => {
+        navigate(`/venue/${venId}`)
+    }
+
     console.log(venues)
     return (
         (!venues) ?
@@ -21,7 +28,7 @@ export default function VenueList ({venues, setVenues}) {
         <div>
             <h1>Venue List</h1>
             {venues.map((x) => (
-                <div key={x.id}>
+                <div key={x.id} onClick={() => goToVenue(x.id)}>
                     {x.name}
                 </div>
             ))}

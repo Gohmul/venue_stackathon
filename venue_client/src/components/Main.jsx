@@ -4,6 +4,7 @@ import { useState, uesEffect } from 'react'
 export default function Main () {
     const [venues, setVenues] = useState([])
     const [events, setEvents] = useState([])
+    
     const getVenues = async () => {
         const response = await axios.get('localhost:8000/venues/')
         setVenues(response.data)

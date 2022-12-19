@@ -5,16 +5,12 @@ import { useState, uesEffect } from 'react'
 export default function VenueList () {
 
     const [venues, setVenues] = useState([])
-
+    const getVenues = async () => {
+        const response = await axios.get('http://localhost:8000/venues/')
+        setVenues(response.data)
+    }
     useEffect(()=> {
-        const getVenues = async () => {
-            const response = await axios.get('http://localhost:8000/venues/')
-            console.log(response)
-            const response = await axios.get('http://localhost:8000/venues/')
-            setVenues(response.data)
-        }
         getVenues()
-        console.log(venues)
     },[])
 
     return (

@@ -11,14 +11,14 @@ export default function Main () {
     const [venues, setVenues] = useState([])
     const [events, setEvents] = useState([])
     const getVenues = async () => {
-        const response = await axios.get('localhost:8000/venues/')
+        const response = await axios.get('http://localhost:8000/venues/')
         setVenues(response.data)
         console.log(venues)
     }
     const getEvents = async () => {
-        const response = await axios.get('localhost:8000/events/')
+        const response = await axios.get('http://localhost:8000/events/')
         setVenues(response.data)
-        console.log(venues)
+        console.log(events)
     }
     useEffect(()=> {
     getVenues()

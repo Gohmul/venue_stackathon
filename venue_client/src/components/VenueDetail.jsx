@@ -10,6 +10,7 @@ export default function VenueDetail ({venues}) {
     useEffect(() => {
         let selectedVenue = venues.find((venue) => venue.id === parseInt(id))
         setVenueDetails(selectedVenue)
+
     }, [venues])
 
     return (
@@ -18,7 +19,7 @@ export default function VenueDetail ({venues}) {
         <div>
             <h1>Venue Detail</h1>
             
-            <img src={venueDetails.image_url} />
+            <img src={venueDetails.image_url}></img>
             <h2>{venueDetails.name}</h2>
             <h2>{venueDetails.street}</h2>
             <h2>{venueDetails.city}</h2>

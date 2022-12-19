@@ -8,7 +8,8 @@ export default function VenueList () {
 
     useEffect(()=> {
         const getVenues = async () => {
-            const response = await axios.get('localhost:8000/venues/')
+            const response = await axios.get('http://localhost:8000/venues/')
+            console.log(response)
             setVenues(response.data)
         }
         getVenues()
@@ -16,6 +17,8 @@ export default function VenueList () {
     },[])
 
     return (
+        (!venues) ?
+        <h1>error</h1> :
         <div>
             <h1>Venue List</h1>
             {venues.map((x) => (

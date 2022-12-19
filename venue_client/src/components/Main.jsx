@@ -13,13 +13,13 @@ export default function Main () {
     const [events, setEvents] = useState([])
     
     const getVenues = async () => {
-        const response = await axios.get('http://localhost:8000/venues/')
+        const response = await axios.get('http://localhost:8000/venues-data/')
         setVenues(response.data)
         // console.log(`venues ${venues}`)
     }
 
     const getEvents = async () => {
-        const response = await axios.get('http://localhost:8000/events/')
+        const response = await axios.get('http://localhost:8000/events-data/')
         setEvents(response.data)
         // console.log(`venues ${events}`)
     }

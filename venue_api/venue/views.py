@@ -29,3 +29,8 @@ class EventList(generics.ListCreateAPIView):
 class EventDetail(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+
+def front(request):
+    context = {}
+    return render(request, "index.html", context)

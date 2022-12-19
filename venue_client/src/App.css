@@ -92,3 +92,54 @@
     transform: scale(1.1);
     -webkit-text-stroke: 1px blue;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-gap: 5em;
+    margin-top: 5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 8em;
+  }
+
+  .venues  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: initial;
+    box-shadow: inset 0 0 3em #daa753;
+    padding-bottom: 2em;
+    border: 3px solid black;
+    border-radius: 40px;
+    align-items: center;
+  }
+  .venues:hover {
+    transform: scale(1.05 );
+    border: #e06666 solid 3px;
+  }
+  .venue-image {
+    margin-top: 2em;
+    height:200px;
+    width: auto;
+    }
+  .events {
+      width: 100%;
+      height: initial;
+      object-fit: center;
+      box-shadow: inset 0 0 3em #daa753;
+      padding-bottom: 2em;
+      border: 3px solid black;
+      border-radius: 40px;
+      text-align: center;
+    }
+    .events:hover {
+      transform: scale(1.05 );
+      border: #daa753 solid 3px;
+    }
+  
+    .event-image {
+      margin-top: 2em;
+      height:200px;
+      width: auto;
+    }

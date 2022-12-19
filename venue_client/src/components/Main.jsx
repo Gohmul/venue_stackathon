@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useState, uesEffect } from 'react'
 import { Routes,Route } from 'react-router-dom'
 import VenueList from './VenueList'
 import EventList from './EventList'
@@ -28,7 +29,7 @@ export default function Main () {
         getEvents()
     },[])
 
-
+    
     return (
         <div className='App-main'>
             <Routes>

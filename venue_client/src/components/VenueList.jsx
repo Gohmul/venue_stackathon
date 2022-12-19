@@ -27,11 +27,15 @@ export default function VenueList ({venues, setVenues}) {
         <h1>error</h1> :
         <div>
             <h1>Venue List</h1>
+            <div className='grid'>
             {venues.map((x) => (
                 <div key={x.id} onClick={() => goToVenue(x.id)}>
+                    <div className='venues'>
                     {x.name}
+                    <img className='venue-image' src={x.image_url}></img>
+                    </div>
                 </div>
-            ))}
+            ))}</div>
         </div>
     )
 }

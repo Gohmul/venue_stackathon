@@ -13,15 +13,15 @@ export default function Main () {
     const [events, setEvents] = useState([])
     
     const getVenues = async () => {
-        const response = await axios.get('http://localhost:8000/venues-data/')
+        const response = await axios.get('http://localhost:8000/venues/')
         setVenues(response.data)
         // console.log(`venues ${venues}`)
     }
 
     const getEvents = async () => {
-        const response = await axios.get('http://localhost:8000/events-data/')
+        const response = await axios.get('http://localhost:8000/events/')
         setEvents(response.data)
-        // console.log(`venues ${events}`)
+        console.log(`events ${events}`)
     }
 
     useEffect(()=> {
@@ -29,6 +29,7 @@ export default function Main () {
         getEvents()
     },[])
 
+    
     return (
         <div className='App-main'>
             <Routes>

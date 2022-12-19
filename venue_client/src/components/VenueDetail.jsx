@@ -25,6 +25,7 @@ export default function VenueDetail ({venues}) {
             <h2>{venueDetails.city}</h2>
             <h2>{venueDetails.state}</h2>
             <h2>{venueDetails.description}</h2>
+            <div></div>
         </div>
     )
 }

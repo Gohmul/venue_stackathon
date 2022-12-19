@@ -16,8 +16,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
-    venues = serializers.HyperlinkedRelatedField(
-        view_name='venue_detail',
+    venues = VenueSerializer(
         many=False,
         read_only=True
     )

@@ -1,11 +1,12 @@
 import "./App.css";
 import VenueList from "./components/VenueList";
 import Main from "./components/Main";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>Venue_Stackathon</h1>
+      <Header />
       <Main />
     </div>
   );

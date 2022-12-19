@@ -28,4 +28,6 @@ class Event(models.Model):
     soldOut = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.act
+        return (
+            self.act
+        )

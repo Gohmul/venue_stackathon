@@ -1,18 +1,20 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useState, uesEffect } from 'react'
+import { useNavigate } from 'react-router'
 
-export default function VenueList () {
+export default function VenueList ({venues, setVenues}) {
 
-    const [venues, setVenues] = useState([])
-    const getVenues = async () => {
-        const response = await axios.get('http://localhost:8000/venues/')
-        setVenues(response.data)
-    }
-    useEffect(()=> {
-        getVenues()
-    },[])
+    // const [venues, setVenues] = useState([])
+    // const getVenues = async () => {
+    //     const response = await axios.get('http://localhost:8000/venues/')
+    //     setVenues(response.data)
+    // }
+    // useEffect(()=> {
+    //     getVenues()
+    // },[])
 
+    console.log(venues)
     return (
         (!venues) ?
         <h1>error</h1> :

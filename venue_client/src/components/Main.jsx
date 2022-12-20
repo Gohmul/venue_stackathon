@@ -18,6 +18,7 @@ export default function Main () {
         // console.log(`venues ${venues}`)
     }
 
+
     const getEvents = async () => {
         const response = await axios.get('http://localhost:8000/events/')
         setEvents(response.data)
@@ -34,7 +35,7 @@ export default function Main () {
         <div className='App-main'>
             <Routes>
                 <Route path="/venues" element={<VenueList venues={venues} setVenues={setVenues}/>}/>
-                <Route path="/events" element={<EventList events={events} setEvents={setEvents}/>}/>
+                <Route path="/events" element={<EventList events={events} venues={venues} setEvents={setEvents}/>}/>
                 <Route path="/venue/:id" element={<VenueDetail venues={venues} events={events}/>}/>
                 <Route path="/event/:id" element={<EventDetail events={events}/>}/>
             </Routes>

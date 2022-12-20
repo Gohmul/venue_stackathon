@@ -3,38 +3,34 @@ import { useEffect } from 'react'
 import { useState, uesEffect } from 'react'
 import { useNavigate } from 'react-router'
 
-export default function VenueList ({venues, setVenues}) {
+export default function VenueList (props) {
 
     let navigate = useNavigate()
-
-    // const [venues, setVenues] = useState([])
-    // const getVenues = async () => {
-    //     const response = await axios.get('http://localhost:8000/venues/')
-    //     setVenues(response.data)
-    // }
-    // useEffect(()=> {
-    //     getVenues()
-    // },[])
-
 
     const goToVenue = (venId) => {
         navigate(`/venue/${venId}`)
     }
+    const Venue = (props) => {
+        return (props.project) ? (
+            <div key={props.project.id} onClick={() => goToVenue(props.project.id)}>
+            <div className='venues'>
+            {props.project.name}
+            <img className='venue-image' src={props.project.image_url}></img>
+            </div>
+        </div>
+            
+        ) : <h1>Loading Please wait....</h1>
 
-    console.log(venues)
+    }
+
     return (
-        (!venues) ?
+        (!props) ?
         <h1>error</h1> :
         <div>
             <h1>Venue List</h1>
             <div className='grid'>
-            {venues.map((x) => (
-                <div key={x.id} onClick={() => goToVenue(x.id)}>
-                    <div className='venues'>
-                    {x.name}
-                    <img className='venue-image' src={x.image_url}></img>
-                    </div>
-                </div>
+            {props.venues.map((venue,index) => (
+                <Venue project={venue} index={index}/>
             ))}</div>
         </div>
     )

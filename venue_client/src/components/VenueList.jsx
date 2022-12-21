@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router'
 export default function VenueList (props) {
 
     let navigate = useNavigate()
-
+console.log(props)
     const goToVenue = (venId) => {
         navigate(`/venue/${venId}`)
     }
@@ -22,7 +22,7 @@ export default function VenueList (props) {
         ) : <h1>Loading Please wait....</h1>
 
     }
-
+ 
     return (
         (!props) ?
         <h1>error</h1> :
@@ -30,7 +30,9 @@ export default function VenueList (props) {
             <h1>Venue List</h1>
             <div className='grid'>
             {props.venues.map((venue,index) => (
+                <div className='venue' onMouseEnter={props.setSelectedVenue(venue)}>
                 <Venue project={venue} index={index}/>
+                </div>
             ))}</div>
         </div>
     )

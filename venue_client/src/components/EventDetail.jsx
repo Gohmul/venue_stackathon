@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
-export default function EventDetail ({events}) {
+export default function EventDetail (props) {
 
     let { id } = useParams()
 
     const [eventDetails, setEventDetails] = useState()
 
     useEffect(() => {
-        let selectedEvent = events.find((event) => event.id === parseInt(id))
+        let selectedEvent = props.events.find((event) => event.id === parseInt(id))
         setEventDetails(selectedEvent)
 
-    }, [events])
-console.log(events)
+    }, [props.events])
+console.log(props.events)
     return (
         (!eventDetails) ?
         <h1>Error</h1> :

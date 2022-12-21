@@ -6,10 +6,16 @@ from venue.views import front
 
 
 urlpatterns = [
-
+    path("", front, name="front"),
+    path("venues/", front, name="front"),
+    path('venue/<id>/', front, name="venue_detail"),
+    path("events/", front, name="front"),
+    path('event/<id>/', front, name="event_detail"),
     path(
-        'venues/', views.VenueList.as_view({'get': 'list'}), name='venue_list'),
-    path('venue/<int:pk>', views.VenueDetail.as_view(), name='venue-detail'),
-    path('events/', views.EventList.as_view(), name='event_list'),
-    path('event/<int:pk>', views.EventDetail.as_view(), name='event-detail'),
+        'venuesdata/', views.VenueList.as_view({'get': 'list'}), name='venue_list'),
+    path('venuedata/<int:pk>', views.VenueDetail.as_view(), name='venue-detail'),
+    path('eventsdata/', views.EventList.as_view(), name='event_list'),
+    path('eventdata/<int:pk>', views.EventDetail.as_view(), name='event-detail'),
+
+
 ]

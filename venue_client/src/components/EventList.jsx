@@ -16,7 +16,7 @@ export default function VenueList(props) {
         const getVenueName = async() => {
             const venueName = props.project.venueName
             const pulledVenue = await axios.get(venueName)
-            const subStr = venueName.substring(28)
+            const subStr = venueName.substring(32)
             const pulledVenueIndexed = pulledVenue.data[subStr - 1 ]
             set_venue_name(pulledVenueIndexed.name)
         }

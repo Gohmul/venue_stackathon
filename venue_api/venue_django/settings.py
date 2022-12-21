@@ -19,8 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 REAL_BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -30,7 +28,9 @@ SECRET_KEY = 'django-insecure-x*z1b__vjg^umlr*_q8x+f_g^w^_f(*1a+a+s)i***tq8_6!#!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+]
 
 
 # Application definition
@@ -63,7 +63,8 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://localhost:8000"
 ]
 
 ROOT_URLCONF = 'venue_django.urls'
